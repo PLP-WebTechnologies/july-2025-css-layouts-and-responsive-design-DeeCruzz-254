@@ -1,0 +1,78 @@
+<style>
+    /* ===== Global Styles ===== */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+    }
+    header, footer {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* ===== Navigation using Flexbox ===== */
+    nav {
+        background-color: #444;
+    }
+    nav ul {
+        display: flex;                /* Flexbox for horizontal layout */
+        justify-content: center;      /* Center items */
+        list-style: none;
+        flex-wrap: wrap;              /* Allow wrapping on smaller screens */
+    }
+    nav li {
+        margin: 0.5rem 1rem;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* ===== Main Layout using Grid ===== */
+    .container {
+        display: grid;
+        grid-template-columns: 3fr 1fr; /* Main content + sidebar */
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .content {
+        background-color: #f4f4f4;
+        padding: 1rem;
+    }
+    .sidebar {
+        background-color: #ddd;
+        padding: 1rem;
+    }
+    footer {
+        margin-top: 1rem;
+    }
+
+    /* ===== Media Queries for Responsiveness ===== */
+    @media (max-width: 900px) {
+        .container {
+            grid-template-columns: 2fr 1fr; /* Slightly narrower sidebar */
+        }
+    }
+    @media (max-width: 600px) {
+        .container {
+            grid-template-columns: 1fr; /* Stack content and sidebar */
+        }
+        nav ul {
+            flex-direction: column;    /* Vertical nav menu */
+            align-items: center;
+        }
+        nav li {
+            margin: 0.5rem 0;
+        }
+    }
+</style>
